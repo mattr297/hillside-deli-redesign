@@ -17,7 +17,6 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -142,9 +141,7 @@
       font-weight: 800;
     }
 
-    section {
-      padding: 78px 7%;
-    }
+    section { padding: 78px 7%; }
 
     .section-heading {
       display: flex;
@@ -191,13 +188,8 @@
       color: var(--muted);
     }
 
-    .menu-card li {
-      margin-bottom: 10px;
-    }
-
-    .menu-card strong {
-      color: var(--dark);
-    }
+    .menu-card li { margin-bottom: 10px; }
+    .menu-card strong { color: var(--dark); }
 
     .photo-card {
       min-height: 340px;
@@ -216,30 +208,20 @@
       color: var(--white);
     }
 
-    .dark-section .section-heading p {
-      color: #d1d5db;
-    }
+    .dark-section .section-heading p { color: #d1d5db; }
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .feature {
+    .dark-section .menu-card {
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 24px;
-      padding: 24px;
+      box-shadow: none;
     }
 
-    .feature strong {
-      display: block;
-      font-size: 1.2rem;
-      margin-bottom: 8px;
+    .dark-section .menu-card h3,
+    .dark-section .menu-card strong {
+      color: var(--white);
     }
 
-    .feature p {
+    .dark-section .menu-card li {
       color: #d1d5db;
     }
 
@@ -325,18 +307,14 @@
     }
 
     .visit-card p,
-    .visit-card li {
-      color: var(--muted);
-    }
+    .visit-card li { color: var(--muted); }
 
     .visit-card ul {
       list-style: none;
       margin-top: 14px;
     }
 
-    .visit-card li {
-      margin-bottom: 8px;
-    }
+    .visit-card li { margin-bottom: 8px; }
 
     .footer {
       padding: 34px 7%;
@@ -348,31 +326,16 @@
       flex-wrap: wrap;
     }
 
-    .footer p {
-      color: #d1d5db;
-    }
+    .footer p { color: #d1d5db; }
 
     @media (max-width: 900px) {
       .nav-links a:not(.btn) { display: none; }
-
-      .hero {
-        padding-top: 42px;
-      }
-
-      .hero-image img {
-        height: 360px;
-      }
-
-      .section-heading {
-        display: block;
-      }
-
-      .section-heading p {
-        margin-top: 16px;
-      }
+      .hero { padding-top: 42px; }
+      .hero-image img { height: 360px; }
+      .section-heading { display: block; }
+      .section-heading p { margin-top: 16px; }
 
       .menu-grid,
-      .feature-grid,
       .review-grid,
       .catering,
       .visit {
@@ -390,7 +353,7 @@
 ```
 <div class="nav-links">
   <a href="#menu">Menu</a>
-  <a href="#why">Why Hillside</a>
+  <a href="#daily">Daily</a>
   <a href="#catering">Catering</a>
   <a href="#visit">Visit</a>
   <a class="btn btn-primary" href="https://hillsidedelimamaroneck.e-tab.com/hillsidedelimamaroneck/venue/60ae520a9c2c6430c6cc5bab/menu" target="_blank">Order Online</a>
@@ -513,34 +476,41 @@
   </div>
 </section>
 
-<section id="why" class="dark-section">
+<section id="daily" class="dark-section">
   <div class="section-heading">
-    <h2>Why locals keep coming back.</h2>
+    <h2>Made for mornings, lunch breaks, and group orders.</h2>
     <p>
-      Fast breakfast, reliable lunch, fresh deli food, and catering for
-      offices, schools, teams, and local events.
+      Whether you're grabbing breakfast before work, picking up lunch,
+      or feeding the whole office, Hillside keeps it simple.
     </p>
   </div>
 
-  <div class="feature-grid">
-    <div class="feature">
-      <strong>🥓 Breakfast</strong>
-      <p>Easy morning orders, egg sandwiches, coffee, and grab-and-go favorites.</p>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <h3>Morning</h3>
+      <ul>
+        <li><strong>Egg sandwiches</strong></li>
+        <li><strong>Coffee</strong></li>
+        <li><strong>Quick breakfast favorites</strong></li>
+      </ul>
     </div>
 
-    <div class="feature">
-      <strong>🥪 Heroes</strong>
-      <p>Specialty sandwiches with bold combinations and classic deli staples.</p>
+    <div class="menu-card">
+      <h3>Midday</h3>
+      <ul>
+        <li><strong>Heroes</strong></li>
+        <li><strong>Wraps</strong></li>
+        <li><strong>Salads & paninis</strong></li>
+      </ul>
     </div>
 
-    <div class="feature">
-      <strong>🥗 Fresh Options</strong>
-      <p>Salads, wraps, and paninis for lighter lunches and everyday regulars.</p>
-    </div>
-
-    <div class="feature">
-      <strong>🚚 Catering</strong>
-      <p>Platters and group orders for offices, schools, teams, and events.</p>
+    <div class="menu-card">
+      <h3>For the Group</h3>
+      <ul>
+        <li><strong>Office lunches</strong></li>
+        <li><strong>Sandwich platters</strong></li>
+        <li><strong>Party orders</strong></li>
+      </ul>
     </div>
   </div>
 </section>
