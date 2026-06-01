@@ -10,13 +10,14 @@
     :root {
       --green: #14532d;
       --cream: #fff7ed;
-      --yellow: #facc15;
       --dark: #111827;
       --muted: #6b7280;
       --white: #ffffff;
+      --border: rgba(0,0,0,0.08);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -31,14 +32,14 @@
     .nav {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 10;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 18px 7%;
       background: rgba(255, 247, 237, 0.96);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,0.08);
+      border-bottom: 1px solid var(--border);
     }
 
     .logo {
@@ -51,7 +52,7 @@
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 22px;
       align-items: center;
       font-weight: 800;
       font-size: 0.95rem;
@@ -81,12 +82,8 @@
     }
 
     .hero {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 48px;
-      align-items: center;
-      min-height: 82vh;
-      padding: 70px 7%;
+      padding: 64px 7% 80px;
+      text-align: center;
     }
 
     .eyebrow {
@@ -99,65 +96,55 @@
     }
 
     h1 {
-      font-size: clamp(3rem, 7vw, 6.2rem);
+      max-width: 1100px;
+      margin: 0 auto 26px;
+      font-size: clamp(3rem, 7vw, 6.5rem);
       line-height: 0.9;
       letter-spacing: -0.075em;
-      margin-bottom: 24px;
+    }
+
+    .hero-image {
+      max-width: 1080px;
+      margin: 30px auto;
+      border-radius: 34px;
+      overflow: hidden;
+      box-shadow: 0 28px 75px rgba(0,0,0,0.22);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 520px;
+      display: block;
+      object-fit: cover;
     }
 
     .hero p {
-      max-width: 640px;
+      max-width: 760px;
+      margin: 0 auto 28px;
       color: var(--muted);
-      font-size: 1.2rem;
-      margin-bottom: 30px;
+      font-size: 1.18rem;
     }
 
     .hero-actions {
       display: flex;
+      justify-content: center;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 30px;
+      margin-bottom: 26px;
     }
 
     .quick-info {
       display: flex;
+      justify-content: center;
       gap: 20px;
       flex-wrap: wrap;
       color: var(--muted);
       font-weight: 800;
     }
 
-    .hero-card {
-      position: relative;
-      min-height: 540px;
-      border-radius: 36px;
-      overflow: hidden;
-      background:
-        linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.58)),
-        url('./unnamed.webp');
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    section {
+      padding: 78px 7%;
     }
-
-    .floating-badge {
-      position: absolute;
-      left: 24px;
-      bottom: 24px;
-      right: 24px;
-      background: rgba(255,255,255,0.94);
-      border-radius: 24px;
-      padding: 22px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
-    }
-
-    .floating-badge strong {
-      display: block;
-      font-size: 1.25rem;
-      margin-bottom: 6px;
-    }
-
-    section { padding: 84px 7%; }
 
     .section-heading {
       display: flex;
@@ -174,7 +161,7 @@
     }
 
     .section-heading p {
-      max-width: 520px;
+      max-width: 560px;
       color: var(--muted);
       font-size: 1.05rem;
     }
@@ -190,12 +177,13 @@
       border-radius: 28px;
       padding: 28px;
       box-shadow: 0 15px 45px rgba(0,0,0,0.08);
-      border: 1px solid rgba(0,0,0,0.06);
+      border: 1px solid var(--border);
     }
 
     .menu-card h3 {
       font-size: 1.45rem;
       margin-bottom: 12px;
+      color: var(--green);
     }
 
     .menu-card ul {
@@ -204,7 +192,7 @@
     }
 
     .menu-card li {
-      margin-bottom: 9px;
+      margin-bottom: 10px;
     }
 
     .menu-card strong {
@@ -212,28 +200,25 @@
     }
 
     .photo-card {
-      min-height: 330px;
+      min-height: 340px;
       border-radius: 28px;
-      overflow: hidden;
       background-size: cover;
       background-position: center;
-      box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.14);
+      overflow: hidden;
     }
 
-    .food-one {
-      background-image: url('./2025-03-16.webp');
-    }
-
-    .food-two {
-      background-image: url('./2025-03-16 (1).webp');
-    }
+    .food-one { background-image: url('./food1.webp'); }
+    .food-two { background-image: url('./food2.webp'); }
 
     .dark-section {
       background: var(--dark);
       color: var(--white);
     }
 
-    .dark-section .section-heading p { color: #d1d5db; }
+    .dark-section .section-heading p {
+      color: #d1d5db;
+    }
 
     .feature-grid {
       display: grid;
@@ -254,7 +239,9 @@
       margin-bottom: 8px;
     }
 
-    .feature p { color: #d1d5db; }
+    .feature p {
+      color: #d1d5db;
+    }
 
     .catering {
       display: grid;
@@ -266,7 +253,7 @@
     .catering-copy {
       background: var(--green);
       color: var(--white);
-      border-radius: 36px;
+      border-radius: 34px;
       padding: 42px;
     }
 
@@ -278,10 +265,10 @@
 
     .catering-photo {
       min-height: 430px;
-      border-radius: 36px;
+      border-radius: 34px;
       background:
         linear-gradient(rgba(0,0,0,0.08), rgba(0,0,0,0.35)),
-        url('./2025-03-16 (1).webp');
+        url('./food2.webp');
       background-size: cover;
       background-position: center;
       box-shadow: 0 25px 70px rgba(0,0,0,0.22);
@@ -317,7 +304,10 @@
       padding: 24px;
     }
 
-    .review strong { display: block; margin-bottom: 8px; }
+    .review strong {
+      display: block;
+      margin-bottom: 8px;
+    }
 
     .visit {
       display: grid;
@@ -331,17 +321,22 @@
       border-radius: 32px;
       padding: 36px;
       box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+      border: 1px solid var(--border);
     }
 
     .visit-card p,
-    .visit-card li { color: var(--muted); }
+    .visit-card li {
+      color: var(--muted);
+    }
 
     .visit-card ul {
       list-style: none;
       margin-top: 14px;
     }
 
-    .visit-card li { margin-bottom: 7px; }
+    .visit-card li {
+      margin-bottom: 8px;
+    }
 
     .footer {
       padding: 34px 7%;
@@ -353,16 +348,36 @@
       flex-wrap: wrap;
     }
 
-    .footer p { color: #d1d5db; }
+    .footer p {
+      color: #d1d5db;
+    }
 
     @media (max-width: 900px) {
       .nav-links a:not(.btn) { display: none; }
-      .hero, .catering, .visit { grid-template-columns: 1fr; }
-      .hero { padding-top: 42px; }
-      .hero-card { min-height: 390px; }
-      .menu-grid, .review-grid, .feature-grid { grid-template-columns: 1fr; }
-      .section-heading { display: block; }
-      .section-heading p { margin-top: 16px; }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .hero-image img {
+        height: 360px;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading p {
+        margin-top: 16px;
+      }
+
+      .menu-grid,
+      .feature-grid,
+      .review-grid,
+      .catering,
+      .visit {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 
@@ -386,36 +401,39 @@
 
   <main>
     <section class="hero">
-      <div>
-        <div class="eyebrow">Mamaroneck, NY • Breakfast • Heroes • Catering</div>
-        <h1>Mamaroneck's neighborhood deli.</h1>
-        <p>Fresh breakfast sandwiches, specialty heroes, wraps, salads, paninis, hot lunch favorites, and catering from Hillside Deli on Mamaroneck Ave.</p>
+      <div class="eyebrow">Mamaroneck, NY • Breakfast • Heroes • Catering</div>
 
 ```
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="https://hillsidedelimamaroneck.e-tab.com/hillsidedelimamaroneck/venue/60ae520a9c2c6430c6cc5bab/menu" target="_blank">Order Online</a>
-      <a class="btn btn-secondary" href="tel:9148353354">Call Now</a>
-    </div>
+  <h1>Mamaroneck's Neighborhood Deli</h1>
 
-    <div class="quick-info">
-      <span>📍 905 Mamaroneck Ave</span>
-      <span>☎ 914-835-3354</span>
-      <span>🥪 Breakfast • Lunch • Catering</span>
-    </div>
+  <div class="hero-image">
+    <img src="./storefront.webp" alt="Hillside Deli storefront">
   </div>
 
-  <div class="hero-card">
-    <div class="floating-badge">
-      <strong>Breakfast, heroes & daily deli favorites</strong>
-      <span>Made fresh for busy mornings, lunch breaks, and local events.</span>
-    </div>
+  <p>
+    Fresh breakfast sandwiches, specialty heroes, wraps, salads, paninis,
+    hot lunch favorites, and catering from Hillside Deli on Mamaroneck Ave.
+  </p>
+
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="https://hillsidedelimamaroneck.e-tab.com/hillsidedelimamaroneck/venue/60ae520a9c2c6430c6cc5bab/menu" target="_blank">Order Online</a>
+    <a class="btn btn-secondary" href="tel:9148353354">Call Now</a>
+  </div>
+
+  <div class="quick-info">
+    <span>📍 905 Mamaroneck Ave</span>
+    <span>☎ 914-835-3354</span>
+    <span>🥪 Breakfast • Lunch • Catering</span>
   </div>
 </section>
 
 <section id="menu">
   <div class="section-heading">
     <h2>Everything you need from a neighborhood deli.</h2>
-    <p>Breakfast sandwiches, specialty heroes, wraps, salads, paninis, hot food, and catering — all in one easy-to-browse homepage.</p>
+    <p>
+      Breakfast sandwiches, specialty heroes, wraps, salads, paninis,
+      hot food, and catering — all organized clearly for fast ordering.
+    </p>
   </div>
 
   <div class="menu-grid">
@@ -498,7 +516,10 @@
 <section id="why" class="dark-section">
   <div class="section-heading">
     <h2>Why locals keep coming back.</h2>
-    <p>Fast breakfast, reliable lunch, fresh deli food, and catering for offices, schools, teams, and local events.</p>
+    <p>
+      Fast breakfast, reliable lunch, fresh deli food, and catering for
+      offices, schools, teams, and local events.
+    </p>
   </div>
 
   <div class="feature-grid">
@@ -529,17 +550,23 @@
     <div class="catering-copy">
       <div class="eyebrow" style="color:#bbf7d0;">Catering & Group Orders</div>
       <h2>Feed the office, team, or party.</h2>
-      <p>Sandwich platters, office lunches, team meals, school events, and weekend party orders. Hillside Deli makes group ordering simple.</p>
+      <p>
+        Sandwich platters, office lunches, team meals, school events, and
+        weekend party orders. Hillside Deli makes group ordering simple.
+      </p>
       <a class="btn btn-secondary" href="tel:9148353354">Ask About Catering</a>
     </div>
 
-    <div class="catering-photo" aria-label="Deli catering sandwiches"></div>
+    <div class="catering-photo" aria-label="Deli food and catering"></div>
   </div>
 </section>
 
 <section class="reviews">
   <h2>A neighborhood deli people remember.</h2>
-  <p>Fresh sandwiches, friendly service, and reliable breakfast and lunch options make Hillside a go-to spot in Mamaroneck.</p>
+  <p>
+    Fresh sandwiches, friendly service, and reliable breakfast and lunch
+    options make Hillside a go-to spot in Mamaroneck.
+  </p>
 
   <a class="btn btn-secondary" href="https://hillsidedelimamaroneck.e-tab.com/hillsidedelimamaroneck/venue/60ae520a9c2c6430c6cc5bab/menu" target="_blank">Order Online</a>
 
