@@ -203,26 +203,36 @@
     .food-one { background-image: url('./food1.webp'); }
     .food-two { background-image: url('./food2.webp'); }
 
-    .dark-section {
-      background: var(--dark);
+    .reviews {
+      background: var(--green);
       color: var(--white);
     }
 
-    .dark-section .section-heading p { color: #d1d5db; }
-
-    .dark-section .menu-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: none;
+    .reviews .section-heading p {
+      color: #dcfce7;
     }
 
-    .dark-section .menu-card h3,
-    .dark-section .menu-card strong {
-      color: var(--white);
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 34px;
     }
 
-    .dark-section .menu-card li {
-      color: #d1d5db;
+    .review {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .review strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .review p {
+      color: #f0fdf4;
     }
 
     .catering {
@@ -254,41 +264,6 @@
       background-size: cover;
       background-position: center;
       box-shadow: 0 25px 70px rgba(0,0,0,0.22);
-    }
-
-    .reviews {
-      background: var(--green);
-      color: var(--white);
-      text-align: center;
-    }
-
-    .reviews h2 { margin-bottom: 16px; }
-
-    .reviews > p {
-      max-width: 730px;
-      margin: 0 auto 28px;
-      font-size: 1.1rem;
-      color: #dcfce7;
-    }
-
-    .review-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 34px;
-      text-align: left;
-    }
-
-    .review {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 24px;
-      padding: 24px;
-    }
-
-    .review strong {
-      display: block;
-      margin-bottom: 8px;
     }
 
     .visit {
@@ -353,7 +328,7 @@
 ```
 <div class="nav-links">
   <a href="#menu">Menu</a>
-  <a href="#daily">Daily</a>
+  <a href="#reviews">Reviews</a>
   <a href="#catering">Catering</a>
   <a href="#visit">Visit</a>
   <a class="btn btn-primary" href="https://hillsidedelimamaroneck.e-tab.com/hillsidedelimamaroneck/venue/60ae520a9c2c6430c6cc5bab/menu" target="_blank">Order Online</a>
@@ -476,41 +451,46 @@
   </div>
 </section>
 
-<section id="daily" class="dark-section">
+<section id="reviews" class="reviews">
   <div class="section-heading">
-    <h2>Made for mornings, lunch breaks, and group orders.</h2>
+    <h2>What customers are saying.</h2>
     <p>
-      Whether you're grabbing breakfast before work, picking up lunch,
-      or feeding the whole office, Hillside keeps it simple.
+      Hillside Deli has built a loyal following in Mamaroneck through fresh food,
+      friendly service, and dependable catering.
     </p>
   </div>
 
-  <div class="menu-grid">
-    <div class="menu-card">
-      <h3>Morning</h3>
-      <ul>
-        <li><strong>Egg sandwiches</strong></li>
-        <li><strong>Coffee</strong></li>
-        <li><strong>Quick breakfast favorites</strong></li>
-      </ul>
+  <div class="review-grid">
+    <div class="review">
+      <strong>★★★★★ Marie Z.</strong>
+      <p>
+        “The perfect walking distance spot for a great breakfast sandwich.
+        The coffee was fresh and delicious. Busy, well staffed and efficient.”
+      </p>
     </div>
 
-    <div class="menu-card">
-      <h3>Midday</h3>
-      <ul>
-        <li><strong>Heroes</strong></li>
-        <li><strong>Wraps</strong></li>
-        <li><strong>Salads & paninis</strong></li>
-      </ul>
+    <div class="review">
+      <strong>★★★★★ Jared L.</strong>
+      <p>
+        “Seriously this place is amazing. Their homemade food is incredible.
+        Service is outstanding and everyone is friendly.”
+      </p>
     </div>
 
-    <div class="menu-card">
-      <h3>For the Group</h3>
-      <ul>
-        <li><strong>Office lunches</strong></li>
-        <li><strong>Sandwich platters</strong></li>
-        <li><strong>Party orders</strong></li>
-      </ul>
+    <div class="review">
+      <strong>★★★★★ Brendan F.</strong>
+      <p>
+        “Our catering order exceeded expectations. The Bronx Bomber and
+        Alessandra sandwiches were outstanding.”
+      </p>
+    </div>
+
+    <div class="review">
+      <strong>★★★★★ Charles M.</strong>
+      <p>
+        “Years later, the service is still friendly and the food is always
+        done with a smile.”
+      </p>
     </div>
   </div>
 </section>
@@ -528,33 +508,6 @@
     </div>
 
     <div class="catering-photo" aria-label="Deli food and catering"></div>
-  </div>
-</section>
-
-<section class="reviews">
-  <h2>A neighborhood deli people remember.</h2>
-  <p>
-    Fresh sandwiches, friendly service, and reliable breakfast and lunch
-    options make Hillside a go-to spot in Mamaroneck.
-  </p>
-
-  <a class="btn btn-secondary" href="https://hillsidedelimamaroneck.e-tab.com/hillsidedelimamaroneck/venue/60ae520a9c2c6430c6cc5bab/menu" target="_blank">Order Online</a>
-
-  <div class="review-grid">
-    <div class="review">
-      <strong>★★★★★ Breakfast favorite</strong>
-      <p>Perfect for quick morning sandwiches and coffee before the day starts.</p>
-    </div>
-
-    <div class="review">
-      <strong>★★★★★ Lunch spot</strong>
-      <p>Heroes, wraps, salads, and hot food make it easy to come back often.</p>
-    </div>
-
-    <div class="review">
-      <strong>★★★★★ Catering-ready</strong>
-      <p>A modern site can help turn regular customers into larger group orders.</p>
-    </div>
   </div>
 </section>
 
